@@ -98,5 +98,5 @@ def test_backstage_passes(start_sell_by, start_quality, expected_quality):
     items = [Item(BACKSTAGE_PASS_NAME, start_sell_by, start_quality)]
     gilded_rose = GildedRose(items)
     gilded_rose.update_quality()
-    assert items[0].quality == expected_quality
+    assert_items_equal(items[0], Item(BACKSTAGE_PASS_NAME, start_sell_by-1, expected_quality))
     
